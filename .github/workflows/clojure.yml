@@ -19,9 +19,6 @@ jobs:
       - name: Create Jars
         run: lein uberjar
       - name: Deploy to Clojars
-        uses: lein deploy clojars
-        with:
-          file: target/carbonite-1.6.0.jar
-          pom-file: pom.xml
-          username: ${{ secrets.CLOJARS_USERNAME }}
-          password: ${{ secrets.CLOJARS_API_KEY }}
+        run: lein deploy clojars
+        env:
+          CLOJARS_AUTH: ${{ secrets.CLOJARS_USERNAME }}:${{ secrets.CLOJARS_API_KEY }}
