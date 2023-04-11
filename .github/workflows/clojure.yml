@@ -7,15 +7,22 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
-
+  publish:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Install dependencies
-      run: lein deps
-    - name: Run tests
-      run: lein test
-    - name: Create Jars
-      run: lein uberjar
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: lein deps
+      - name: Run tests
+        run: lein test
+      - name: Create Jars
+        run: lein uberjar
+      - name: Deploy to Clojars
+        uses: sverigesradio/deploy-clojars-action@v1.0.0
+        with:
+          file: target/carbonite-1.6.0.jar
+          pom-file: pom.xml
+          username: ${{ secrets.CLOJARS_USERNAME }}
+          password: ${{ secrets.CLOJARS_PASSWORD }}
+
