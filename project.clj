@@ -1,4 +1,8 @@
-(defproject org.apache.storm/carbonite "1.6.0"
+(defproject org.clojars.bipinprasad/carbonite "1.6.0"
+  ;; Deploy Steps
+  ;;    lein clean
+  ;;    lein install
+  ;;    lein deploy clojars
   :source-paths ["src/clj"]
   :java-source-paths ["src/jvm"]
   :javac-options ["-source" "1.8" "-target" "1.8"]
@@ -17,12 +21,6 @@
   :developers [{:name "Bipin Prasad"
                 :email "bipinprasad@apache.org"
                 :roles [:developer]}]
-;  :deploy-repositories {"releases" {:url "https://my-repo.com/repository/maven-releases/"
-;                                    :username "my-username"
-;                                    :password "my-password"}
-;                        "snapshots" {:url "https://my-repo.com/repository/maven-snapshots/"
-;                                     :username "my-username"
-;                                     :password "my-password"}}:global-vars {*warn-on-reflection* true}
   :deploy-repositories {"releases" {:url "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
                                     :username :env/MVN_USERNAME
                                     :password :env/MVN_PASSWORD}

@@ -19,7 +19,7 @@ jobs:
       - name: Create Jars
         run: lein uberjar
       - name: Deploy to Clojars
-        uses: clojars/lein-deploy@v2
+        uses: lein deploy clojars
         with:
           file: target/carbonite-1.6.0.jar
           pom-file: pom.xml
