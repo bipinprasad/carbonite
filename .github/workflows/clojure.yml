@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  publish:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -18,7 +18,8 @@ jobs:
         run: lein test
       - name: Create Jars
         run: lein uberjar
-      - name: Deploy to Clojars
-        run: lein deploy clojars
-        env:
-          CLOJARS_AUTH: ${{ secrets.CLOJARS_USERNAME }}:${{ secrets.CLOJARS_API_KEY }}
+#      - name: Deploy to Clojars
+#        run: lein deploy clojars
+#        env:
+#          CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
+#          CLOJARS_API_KEY: ${{ secrets.CLOJARS_API_KEY }}
