@@ -14,6 +14,18 @@
   :developers [{:name "Bipin Prasad"
                 :email "bipinprasad@apache.org"
                 :roles [:developer]}]
+;  :deploy-repositories {"releases" {:url "https://my-repo.com/repository/maven-releases/"
+;                                    :username "my-username"
+;                                    :password "my-password"}
+;                        "snapshots" {:url "https://my-repo.com/repository/maven-snapshots/"
+;                                     :username "my-username"
+;                                     :password "my-password"}}:global-vars {*warn-on-reflection* true}
+  :deploy-repositories {"releases" {:url "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+                                    :username :env/MVN_USERNAME
+                                    :password :env/MVN_PASSWORD}
+                        "snapshots" {:url "https://oss.sonatype.org/content/repositories/snapshots/"
+                                     :username :env/MVN_USERNAME
+                                     :password :env/MVN_PASSWORD}}
   :profiles {:1.2 {:dependencies [[org.clojure/clojure "1.2.1"]]}
              :1.3 {:dependencies [[org.clojure/clojure "1.3.0"]]}
              :1.4 {:dependencies [[org.clojure/clojure "1.4.0"]]}
