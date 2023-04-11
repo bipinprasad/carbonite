@@ -24,5 +24,4 @@ jobs:
           file: target/carbonite-1.6.0.jar
           pom-file: pom.xml
           username: ${{ secrets.CLOJARS_USERNAME }}
-          password: ${{ secrets.CLOJARS_PASSWORD }}
-
+          password: ${{ secrets.CLOJARS_API_KEY }}
