@@ -7,7 +7,7 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [com.esotericsoftware/kryo "4.0.2"]
                  [com.twitter/chill-java "0.9.5"]]
-  :plugins [[lein-deploy-clojars "RELEASE"]]
+;  :plugins [[lein-deploy-clojars "RELEASE"]]
   :license {:name "Apache License"}
   :url "https://github.com/bipinprasad/carbonite"
   :scm {:url "https://github.com/bipinprasad/carbonite"
